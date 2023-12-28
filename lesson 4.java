@@ -76,3 +76,38 @@ class Main{
 		System.out.println(letter3+" "+letter2+" "+letter1);
 	}
 }
+
+/תרגיל 5
+import java.util.Scanner;
+
+class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter 4 string word");
+		String word = sc.next();
+
+		cahr letter0 = word.charAt(0);
+		cahr letter1 = word.charAt(1);
+		cahr letter2 = word.charAt(2);
+		cahr letter3 = word.charAt(3);
+
+		if (letter0 == 'a' || letter0 == 'e' || letter0 == 'i' || letter0 == 'o' || letter0 == 'u')
+			letter0 = '*';
+			if (letter1 == 'a' || letter1 == 'e' || letter1 == 'i' || letter1 == 'o' || letter1 == 'u')
+			letter1 = '*';
+				if (letter2 == 'a' || letter2 == 'e' || letter2 == 'i' || letter2 == 'o' || letter2 == 'u')
+					letter2 = '*';
+					if (letter3 == 'a' || letter3 == 'e' || letter3 == 'i' || letter3 == 'o' || letter3 == 'u')
+						letter3 = '*';
+		System.out.println(letter0+""+letter1+""+letter2+""+letter3);
+	}
+}
+
+/תרגיל 6
+	class Main{
+		public static void main(String[] args){
+			
+
+
+
+
