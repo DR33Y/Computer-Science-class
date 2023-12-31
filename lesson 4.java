@@ -104,10 +104,80 @@ class Main{
 }
 
 /תרגיל 6
-	class Main{
-		public static void main(String[] args){
-			
+import java.util.Random;
 
+class Main{
+	public static void main(String[] args){
+		Random r = new Random();
+		int num = r.nextInt(101);
+		System.out.println(num);
 
+		if (num>10)
+			System.out.println("two digits number");
+		else
+			System.out.println("single digit number");
+		if (num%2==0)
+			System.out.println("the number is divisible by 2");
+		else
+			if (num%3==0)
+				System.out.prntln("the number is divisble by 3");
+			else
+				System.ou.println("the number isn't divisble by 2 or 3");
+	}
+}
 
+/תרגיל  7
+import java.util.Scanner;
 
+class Main{
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter x1");
+		int x1 = sc.nextInt();
+		System.out.println("Enter x2");
+		int x2 = sc.nextInt();
+		System.out.println("Enter y1");
+		int y1 = sc.nextInt();
+		System.out.println("Enter y2");
+		int y2 = sc.nextInt();
+
+		double d = Math.sqrt((x2-x1)+(y2-y1));
+		System.out.println(d);
+
+	}
+}
+
+/תרגיל 8
+import java.util.Scanner;
+
+class Main{
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter radios");\
+		int r = sc.nextInt();
+		double pi = 3.14;
+
+		double s = pi*(Math.pow(r,r));
+		double p = pi*2*r;
+
+		System.out.println("The area of the circle is "+s);
+		System.out.println("The scope of the circle is "+p);\
+	}
+}
+
+/תרגיל 9
+import java.util.Scanner;
+
+class Main{
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter side a");
+		int a = sc.nextInt();
+		System.out.println("Enter side b");
+		int b = sc.nextInt();
+
+		double extras = Math.pow(a,2) + Math.pow(b,2);
+		double remainder = Math.sqrt(extras);
+		System.out.println(reaminder);
+	}
+}
