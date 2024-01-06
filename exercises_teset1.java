@@ -67,6 +67,30 @@ public class Tester {
 }
 
 /תרגיל 4
+import java.util.Scanner;
 
-
-
+public class Tester {
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter 2 String over 3 letters");
+		
+		String str1 = sc.next();
+		String str2 = sc.next();
+		
+		if (str1.length() > str2.length())
+			System.out.println(str1);
+		else
+			if (str2.length() > str1.length())
+				System.out.println(str2);
+			else
+				System.out.println("The string are equael! "+str1);
+		if (str1.charAt(0) == str2.charAt(0))
+			System.out.println("True. str1 index 0: "+str1.charAt(0)+" str2 indx 0: "+str2.charAt(0));
+		else
+			System.out.println("False. str1 index 0: "+str1.charAt(0)+" str2 indx 0: "+str2.charAt(0));
+		if (str2.indexOf(str1) >= 0)
+			System.out.println("str1 in str2");
+		else
+			System.out.println("str1 isn't in str2");
+	}
+}
