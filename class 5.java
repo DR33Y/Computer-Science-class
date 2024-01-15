@@ -24,7 +24,9 @@ public class Tester {
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
 		f2(num);
+  	}
   }
+
 
 /תרגיל 3
    import java.util.Scanner; 
@@ -40,6 +42,7 @@ public class Tester {
 		int num2 = sc.nextInt();
 		int num_sum = f3(num1, num2);
 		System.out.println(num_sum);
+  	}
   }
 
   /תרגיל 4
@@ -58,3 +61,79 @@ public class Tester {
 		int num_ave = f4(num1, num2, num3);
 		System.out.println(num_ave);
 	}
+}
+
+/תרגיל 5
+import java.util.Scanner; 
+
+public class Tester {
+	public static void f5(int r) {
+		double pai = 3.14;
+		double p = pai*Math.pow(r,2);
+		double s = 2*pai*r;
+		System.out.println(s);
+		System.out.println(p);
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter radios");
+		int r = sc.nextInt();
+		f5(r);
+	}
+}
+
+/תרגיל 6
+import java.util.Scanner; 
+
+public class Tester {
+	public static  double f6(int a, int b) {
+		double c_pow = Math.pow(a,2)+Math.pow(b,2); 
+		double c_side = Math.sqrt(c_pow);
+		return c_side;
+	}
+	public static void main(String[] args) {
+		System.out.println("Enter a and b side");
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		double c = f6(a,b);
+		System.out.println("C is "+c);
+	}
+}
+
+/תרגיל 7
+import java.util.Scanner; 
+
+public class Tester {
+	public static void f7(String word) {
+		char letter1 = word.charAt(0);
+		char letter2 = word.charAt(1);
+		char letter3 = word.charAt(2);
+		System.out.println(letter3+""+letter2+""+letter1);
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter 3 word string");
+		String word = sc.next();
+		f7(word);
+	}
+}
+
+/תרגיל 8
+import java.util.Scanner; 
+
+public class Tester {
+	public static int f8(int a1, int d, int n) {
+		int an = a1 + d*(n-1);
+		return an;
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a1, n, d");
+		int a1 = sc.nextInt();
+		int n = sc.nextInt();
+		int d = sc.nextInt();
+		int an = f8(a1,n,d);
+		System.out.println("The main value is "+an);
+	}
+}
