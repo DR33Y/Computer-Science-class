@@ -40,26 +40,24 @@ public class Tester {
 		Scanner sc = new Scanner(System.in);
 		int num1 = sc.nextInt();
 		int num2 = sc.nextInt();
-		int num_sum = f3(num1, num2);
-		System.out.println(num_sum);
+		System.out.println(f3(num1, num2));
   	}
   }
 
   /תרגיל 4
-    import java.util.Scanner; 
+import java.util.Scanner; 
 
 public class Tester {
-  public static int f4(int num1, int num2, int num3) {
+	public static int f4(int num1, int num2, int num3) {
 		return ((num1+num2+num3)/3);
 	}
-  public static void main(String[] args) {
+	public static void main(String[] args) {
 		System.out.println("Enter 3 number and get their average");
 		Scanner sc = new Scanner(System.in);
 		int num1 = sc.nextInt();
 		int num2 = sc.nextInt();
 		int num3 = sc.nextInt();
-		int num_ave = f4(num1, num2, num3);
-		System.out.println(num_ave);
+		System.out.println("The average of the number is: "+f4(num1, num2, num3));
 	}
 }
 
@@ -88,18 +86,17 @@ import java.util.Scanner;
 public class Tester {
 	public static  double f6(int a, int b) {
 		double c_pow = Math.pow(a,2)+Math.pow(b,2); 
-		double c_side = Math.sqrt(c_pow);
-		return c_side;
+		double c = Math.sqrt(c_pow);
+		return c;
 	}
 	public static void main(String[] args) {
 		System.out.println("Enter a and b side");
 		Scanner sc = new Scanner(System.in);
 		int a = sc.nextInt();
 		int b = sc.nextInt();
-		double c = f6(a,b);
-		System.out.println("C is "+c);
+		System.out.println("C is "+f6(a,b));
 	}
-}
+}	
 
 /תרגיל 7
 import java.util.Scanner; 
@@ -132,8 +129,7 @@ public class Tester {
 		System.out.println("Enter a1, n, d");
 		int a1 = sc.nextInt();
 		int n = sc.nextInt();
-		int d = sc.nextInt();
-		int an = f8(a1,n,d);
-		System.out.println("The main value is "+an);
+		int d = sc.nextInt();f8(a1,n,d);
+		System.out.println("The main value is "+f8(a1,n,d));
 	}
 }
