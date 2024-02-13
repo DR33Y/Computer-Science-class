@@ -200,6 +200,18 @@ public class Tester {
 			n++;
 		}
 	}
-	public static void main(String[] args) {
+	
+	public static void f17(double month, double mortgage) {
+		double sum=0, interest = 0.005, fund = mortgage/month, ave_month=0;
+		int cnt=0;
+		while(cnt<month) {
+			sum = fund+(mortgage*interest);
+			ave_month += sum; 
+			cnt++;
+		}
+		System.out.println("monthly payment "+ave_month/month+"\ntotal payment: "+mortgage);
+	}
+
+	public static void main(String[] args) { 
 	}
 }
