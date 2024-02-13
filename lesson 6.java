@@ -47,7 +47,25 @@ public class Tester {
 		}while (user_code != secret_code);
 	}
 	
-	public static void f4(String str) {
+	public static void f4(int num) {
+		
+		int units=0;
+		while(num>0) {
+			num = num/10;
+			units++;
+		}
+		System.out.println("The number has "+units+" units");
+	}
+	public static int f5(int num) {
+		int i, num_units=0, sum=0;
+		while(num > 0) {
+			num_units = num%10; 
+			sum += num_units;
+			num /= 10;
+		}
+		return sum;
+	}
+	public static void f6(String str) {
     	int len = str.length()-1, letter = 0, ans = 0;
     	char i_first = str.charAt(letter), i_last = str.charAt(len);
         
@@ -66,7 +84,7 @@ public class Tester {
         	System.out.println(true);
     }
 	
-	public static void f5(int num) {
+	public static void f7(int num) {
 		for (int i=1; i<num+1; i++) {
             if (num%i==0) {
                 System.out.print(i);
@@ -76,22 +94,19 @@ public class Tester {
         }
 	}
 	
-	public static void f6() {
-	    int i, j, num1=0, num2=0, ans=0;
+	public static void f8() {
+	    int i, j, numbers=0;
 	    
 	    for(i=0; i<10; i++) {
-	        num1++;
 	        for(j=0; j<10; j++) {
-	            num2++;
-	            ans = num1*num2;
-	            System.out.println(num1+"*"+num2+"="+ans);
+	        	numbers++;
+	            System.out.print(numbers+" ");
 	        }
-	        System.out.println();
-	        num2 = 0;
+	        System.out.println(" ");
 	    }
 	}	
 	
-	 public static void f7() {
+	 public static void f9() {
 		Scanner sc = new Scanner(System.in);
 		int grade_num = 1, min_grade=100,max_grade=0;
 		
@@ -111,7 +126,7 @@ public class Tester {
 		System.out.println("max grade: "+max_grade+"");
 	}
 	
-	 public static boolean f8(int num) {
+	 public static boolean f10(int num) {
 		 int i, num1=1, num2=0, num3;
 		 boolean ans;
 		 while(num1<num) {
@@ -125,7 +140,7 @@ public class Tester {
 			 return false;
 	 }
 	
-	 public static void f9(int num1, int num2) {
+	 public static void f11(int num1, int num2) {
 		 int i, ans=0;
 		 for(i=0; i<num1; i++) {
 			 ans = ans + num2;
@@ -133,19 +148,58 @@ public class Tester {
 		 System.out.println(ans);
 		 
 	 }
-	 
-	 public static void f10(int height) {
-		 
+
+	 public static void f12(int height) {
+		 int i, j;
+		 int fix = height-1;
+		 int base = fix+height;
+		 int x1 = base/2;
+		 int x2 = base/2;
+		 for(i=0; i<height; i++) {
+			 for(j=0; j<base; j++) {
+				 if(j >= x1 && j<= x2)
+					 System.out.print("*");
+				 else
+					 System.out.print(" ");
+			 }
+			 x1--;
+			 x2++;
+			 System.out.println();
+		 }
 	 }
+	public static void  f13(int a1, int d, int n) {
+		int curr_n=1;
+		 while(curr_n < n) {
+			int an = a1+d*(curr_n-1);
+			System.out.println("for n = "+curr_n+". an = "+an);
+			curr_n++;
+		 }
+	}
+	
+	public static void f14(int i1, int i2) {
+		int cnt=0, num1=1, num2=0, num3;
+		do {
+			num3 = num1;
+			num1 = num1 + num2;
+			num2 = num3;
+			cnt++;
+			if(cnt<i1)
+				continue;
+			System.out.print(num2);
+			if(cnt<i2-1)
+				System.out.print(",");
+		}while(cnt<i2-1);
+	}
+	
+	public static void f16(int a, int b) {
+		int i, n=1;
+		double ans=0;
+		for(i=0; i<10; i++) {
+			ans = a*Math.pow(b,n-1);
+			System.out.println("series "+n+" member is: "+ans);
+			n++;
+		}
+	}
 	public static void main(String[] args) {
-		f1();
-		f2();
-		f3(2367);
-		f4("Daniel");
-		f5(25);
-		f6();
-		f7();
-		f8(144);
-		f9(6,7);
 	}
 }
