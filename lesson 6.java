@@ -21,13 +21,12 @@ public class Tester {
 		String str; 
 		int sum = 0;
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter String");
-		str = sc.next();
-		while (!str.equals("enter")) {
+		do {
 			System.out.println("Enter String");
-			str = sc.next();
+			str = sc.nextLine();
 			sum++;
 		}
+		while (!str.equals("enter"));
 		System.out.println("finally!\nyou enter "+sum+" words");	
 	}
 	
@@ -160,7 +159,7 @@ public class Tester {
 		 int x2 = base/2;
 		 for(i=0; i<height; i++) {
 			 for(j=0; j<base; j++) {
-				 if(j >= x1 && j<= x2)
+				 if(j >= x1 && j <= x2)
 					 System.out.print("*");
 				 else
 					 System.out.print(" ");
@@ -171,8 +170,8 @@ public class Tester {
 		 }
 	 }
 	public static void  f13(int a1, int d, int n) {
-		int curr_n=1;
-		 while(curr_n < n) {
+		int curr_n=1, i;
+		 for(i=0; i<d; i++) {
 			int an = a1+d*(curr_n-1);
 			System.out.println("for n = "+curr_n+". an = "+an);
 			curr_n++;
