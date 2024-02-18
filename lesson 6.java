@@ -1,4 +1,7 @@
+package example;
+
 import java.util.Scanner;
+import java.util.Random;
 
 public class Tester {
 	public static void f1() {
@@ -202,16 +205,53 @@ public class Tester {
 	}
 	
 	public static void f17(double month, double mortgage) {
-		double sum=0, interest = 0.005, fund = mortgage/month, ave_month=0;
+		double sum=0, interest = 0.005, fund = mortgage/month, ave_month=0, curr_mortgage = mortgage;
 		int cnt=0;
 		while(cnt<month) {
-			sum = fund+(mortgage*interest);
+			sum = fund+(curr_mortgage*interest);
 			ave_month += sum; 
+			curr_mortgage -= fund;
 			cnt++;
 		}
 		System.out.println("monthly payment "+ave_month/month+"\ntotal payment: "+mortgage);
 	}
+	
+	public static void f20() {
+		Scanner sc = new Scanner(System.in);
+		int i, math_grade=0, english_grade=0;
+		double highest_ave=0;
+		String math_name= " ", english_name = " ", ave_name = " ";
+		
+		for(i=1; i<=3; i++){
+			System.out.print("Enter student "+i+" name: ");
+			String student_name = sc.next();
 
+			System.out.print("Enter math grade: ");
+			int math = sc.nextInt();
+			System.out.print("Enter english grade: ");
+			int english = sc.nextInt();
+			
+			double ave = math+english/2;
+			if(ave > highest_ave) {
+				ave_name = student_name;
+				highest_ave = ave;
+			}
+			
+			if(math > math_grade) {
+				math_name = student_name;
+				math_grade = math;
+			}
+			
+			if(english > english_grade) {
+				english_name = student_name;
+				english_grade = english;
+			}
+		}
+		System.out.println("The student with the hieghest grade in math is "+math_name);
+		System.out.println("The student with the hieghest grade in english is "+english_name);
+		System.out.println("The student with the hieghest average is"+ave_name);
+	}
 	public static void main(String[] args) { 
 	}
+	
 }
