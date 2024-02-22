@@ -1,0 +1,117 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class Tester {
+	public static void f1(int[] arr, int index) {
+		if(index <= arr.length) {
+			if(arr[index]%2 != 0)
+				arr[index]++;
+		}
+		else
+			System.out.println("Error");
+	}
+	
+	public static void f2(int[] grades) {
+		int i, sum=0;
+		
+		for(i=0; i<grades.length-1; i++) {
+			sum += grades[i];
+		}
+		System.out.println("Your average is "+(double)sum/i);
+	}
+	
+	public static void f3(int[] grades) {
+		int i, min=100, max=0;
+		
+		for(i=0; i<grades.length; i++) {
+			if(grades[i] < min)
+				min = grades[i];
+			if(grades[i] > max)
+				max = grades[i];
+		}
+		System.out.println("The minimum grade is "+min+"\nThe maximum grade is "+max);
+	}
+	
+	public static void f4(int[] numbers) {
+		int i;
+		int index1=0, index2=1;
+		
+		for(i=0; i<numbers.length-1; i++) {
+			int index_sum = numbers[index1]+numbers[index2];
+			if(index_sum%2!=0) 
+				System.out.println(numbers[index1]+" "+numbers[index2]);
+			index1++;
+			index2++;
+		}
+	}
+	
+	public static void f5(int num) {
+		Random r = new Random();
+		
+		int i;
+		int[] numbers = new int[10];
+		boolean ans=true;
+		
+		for(i=0; i<numbers.length; i++) {
+			numbers[i] = r.nextInt(0,101);
+			System.out.print(numbers[i]+" ");
+		}
+		System.out.println();
+
+		for(i=0; i<numbers.length; i++) {
+			if(num == numbers[i]) {
+				ans=true;
+				break;
+			}
+			else
+				ans=false;
+		}
+		System.out.println(ans);
+	}
+	
+	public static void f6() {
+		Random r = new Random();
+		
+		int i;
+		int[] numbers = new int[10];
+		int index1=0, index2=1;
+		
+		for(i=0; i<numbers.length; i++) { 
+			numbers[i] = r.nextInt(0,101);
+			System.out.print(numbers[i]+" ");
+		}
+		System.out.println();
+		
+		for(i=0; i<numbers.length-1; i++) {
+			if(numbers[index1]%2==0 && numbers[index2]%2==0)
+				System.out.println(numbers[index1]+" "+numbers[index2]);
+			index1++;
+			index2++;
+		}
+	}
+	
+	public static void f7() {
+		Random r = new Random();
+		
+		int i, max=0;
+		int[] numbers = new int[10];
+		
+		for(i=0; i<numbers.length; i++)
+			numbers[i] = r.nextInt(0,101);
+		
+		for(i=0; i<numbers.length; i++) {
+			if(numbers[i] > max)
+				max = numbers[i];
+		}
+		numbers[numbers.length-1]=max;
+		
+		for(i=0; i<numbers.length; i++)
+			System.out.print(numbers[i]+" ");
+	}
+	
+	public static void f8(int[] arr) {
+		
+	}
+	public static void main(String[] args) {
+	}
+}
