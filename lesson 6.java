@@ -1,5 +1,3 @@
-package example;
-
 import java.util.Scanner;
 import java.util.Random;
 
@@ -215,6 +213,43 @@ public class Tester {
 		System.out.println("monthly payment "+ave_month/month+"\ntotal payment: "+mortgage);
 	}
 	
+	public static void f18(int num) {
+		while(num > 0) {
+			if(num%2==0)
+				System.out.print(0);
+			else
+				System.out.print(1);
+			num = num/2;
+		}
+	}
+	
+	public static void f19() {
+		Random r = new Random();
+		 
+		int i;
+		int close_x=500, close_y=500;
+		int y_of_x=0, x_of_y=0;
+		
+		for(i=1; i<=5; i++) {
+			int x = r.nextInt(0,101);
+			int y = r.nextInt(0,101);
+			System.out.println("point "+i+" ("+x+","+y+")");
+			
+			if(x<close_x) {
+				close_x = x;
+				y_of_x = y;
+			}
+			if(y<close_y) {
+				close_y = y;
+				x_of_y = x;
+			}
+		}
+		if(close_x < close_y || x_of_y < y_of_x)
+			System.out.println("The closet point to the middle is ("+close_x+","+y_of_x+")");
+		else
+			System.out.println("The closet point to the middle is ("+x_of_y+","+close_y+")");
+	}
+	
 	public static void f20() {
 		Scanner sc = new Scanner(System.in);
 		int i, math_grade=0, english_grade=0;
@@ -251,6 +286,6 @@ public class Tester {
 		System.out.println("The student with the hieghest average is"+ave_name);
 	}
 	public static void main(String[] args) { 
-	}
-	
+		f19();
+	}	
 }
