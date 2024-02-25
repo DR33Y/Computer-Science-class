@@ -1,7 +1,10 @@
+package example;
+
 import java.util.Scanner;
 import java.util.Random;
 
 public class Tester {
+	
 	public static void f1(int[] arr, int index) {
 		if(index <= arr.length) {
 			if(arr[index]%2 != 0)
@@ -109,9 +112,47 @@ public class Tester {
 			System.out.print(numbers[i]+" ");
 	}
 	
-	public static void f8(int[] arr) {
+	public static int f8(int[] arr) {
+		int i;
+		int sum=0;
 		
+		for(i=0; i<arr.length; i++) {
+			if(arr[i] < 0)
+				arr[i] *= -1;
+			sum += arr[i];
+			
+			if(sum == arr[i+1])
+				return arr[i+1];
+		}
+		return -1;
 	}
+	
+	public static void f10(int[] arr, int num) {
+		int i;
+		for(i=0; i<arr.length; i++) {
+			if(arr[i] > num)
+				System.out.print(i+" ");
+		}
+	}
+	
+	public static int f9(String[] arr, char letter) {
+		int i, j;
+		int sum=0;
+		
+		for(i=0; i<arr.length; i++) {
+			int len = arr[i].length();
+			for(j=0; j<len; j++) {
+				if(letter == arr[i].charAt(j))
+					sum++;
+			}
+		}
+		return sum;
+	}
+	
+	public static void f11() {
+			
+	}
+	
 	public static void main(String[] args) {
-	}
+  	}
 }
