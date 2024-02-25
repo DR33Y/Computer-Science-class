@@ -127,14 +127,6 @@ public class Tester {
 		return -1;
 	}
 	
-	public static void f10(int[] arr, int num) {
-		int i;
-		for(i=0; i<arr.length; i++) {
-			if(arr[i] > num)
-				System.out.print(i+" ");
-		}
-	}
-	
 	public static int f9(String[] arr, char letter) {
 		int i, j;
 		int sum=0;
@@ -149,10 +141,37 @@ public class Tester {
 		return sum;
 	}
 	
-	public static void f11() {
+	public static void f10(int[] arr, int num) {
+		int i;
+		for(i=0; i<arr.length; i++) {
+			if(arr[i] > num)
+				System.out.print(i+" ");
+		}
+	}
+	
+	
+	public static int f11(int[] arr) {
+		int i, pre_max=2147483646;
+		int max=0, dif, second_i=0;
+		for(i=0; i<arr.length; i++) {
+			if(arr[i] > max)
+				max = arr[i];
+		}
+		for(i=0; i<arr.length; i++) {
+			dif = max - arr[i];
 			
+			if(arr[i] == max)
+				continue;
+				if(dif < pre_max) {
+					pre_max = dif;
+					second_i = i;
+				}
+		}
+		return second_i;
 	}
 	
 	public static void main(String[] args) {
+		int[] arr = {3,8,12,9,2};
+		System.out.println(f11(arr));
   	}
 }
