@@ -170,8 +170,27 @@ public class Tester {
 		return second_i;
 	}
 	
+	public static void f12(int arr[], int num) {
+		int i, j;
+		
+		System.out.println("before change:");
+		for(i=0; i<arr.length; i++) 
+			System.out.print(arr[i]+", ");
+		System.out.println();
+		
+		for(i=0; i<arr.length; i++) {
+			if(arr[i] == num) {
+				for(j=i; j<arr.length-1; j++)
+					arr[j] = arr[j+1];
+			}
+		}
+		
+		System.out.println("after change:");
+		for(i=0; i<arr.length; i++) 
+			System.out.print(arr[i]+", ");
+	}
+
+	
 	public static void main(String[] args) {
-		int[] arr = {3,8,12,9,2};
-		System.out.println(f11(arr));
-  	}
+	}
 }
