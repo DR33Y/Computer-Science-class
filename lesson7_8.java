@@ -30,27 +30,64 @@
 
 //ArithmeticProgression
   public class ArithmeticProgression {
-  	private int _fM;
-  	private int _diff;
-  	public ArithmeticProgression(int fM, int diff) {
-  		_fM = fM;
-  		_diff = diff;
-  	}
-  	public void printGeneralSeries() {
-  		System.out.println("an = "+_fM+"+(n-1)*"+_diff);
-  	}
-  	public int memberCalculation(int n) {
-  		return _fM+(n-1)*_diff;
-  	}
-  	public int calculateN(int an) {
-  		int n = ((an-_fM)/_diff)+1;
-  		if(an/n == _diff)
-  			return n;
-  		else
-  			return 0;
-  		
-  	}
-  }
+	private int _fM;
+	private int _diff;
+	public ArithmeticProgression(int fM, int diff) {
+		_fM = fM;
+		_diff = diff;
+	}
+	public ArithmeticProgression(ArithmeticProgression other) {
+		_fM = other._fM;
+		_diff = other._diff;
+	}
+	
+	public void printGeneralSeries() {
+		System.out.println("an = "+_fM+"+(n-1)*"+_diff);
+	}
+	public int memberCalculation(int n) {
+		return _fM+(n-1)*_diff;
+	}
+	public int calculateN(int an) {
+		double n;
+		n = (double)((an-_fM)/_diff)+1;
+		if (n%2 == 0)
+			return (int)n;
+		else 
+			return 0;
+	}
+	
+	public String toString() {
+		return ("an = "+_fM+"+(n-1)*"+_diff);
+	}
+	
+	public boolean equal(ArithmeticProgression other) {
+		if(other._fM == _fM && other._diff == _diff)
+			return true;
+		else
+			return false;
+	}
+	
+	public boolean smalLDiff(ArithmeticProgression other) {
+		if(other._diff == _diff) 
+			return true;
+		else
+			return false;
+	}
+	
+	public int getDiff() {
+		return _diff;
+	}
+	public int getfM() {
+			return _fM;
+		}
+	public void setDiff(int diff) {
+		_diff = diff;
+	}
+	public void setfM(int fM) {
+		_fM = fM;
+	}
+	
+}
 
   public class Tester {
 	public static void main(String[] args) {
