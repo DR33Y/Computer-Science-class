@@ -16,17 +16,21 @@
   }
 
   public class Tester {
-  	public static void main(String[] args) {
-  		Point p1 = new Point(1,1);
-      Point p2 = new Point(2,2);
-      p1.printStatus();
-      p1.move(1,1);
-      p1.printStatus();
-      p2.printStatus();
-      p2.move(1,1);
-      p2.printStatus();
-    }
-  }
+	public static void main(String[] args) {
+		ArithmeticProgression ap1 = new ArithmeticProgression(2,2);
+		ArithmeticProgression ap2 = new ArithmeticProgression(ap1);
+		System.out.println(ap1);
+		int an = ap1.memberCalculation(6);
+		System.out.println(an);
+		int n = ap1.calculateN(4);
+		System.out.println(ap1.calculateN(4));
+		boolean new_series = ap2.equal(ap1);
+		System.out.println(new_series);
+		boolean small_diff = ap2.smalLDiff(ap1);
+		System.out.println(small_diff);
+		
+	}
+}
 
 //ArithmeticProgression
   public class ArithmeticProgression {
