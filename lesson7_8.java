@@ -138,16 +138,50 @@
 		_author = author;
 		_categoryNumber = categoryNumber; 
 	}
+	public Book(Book other) {
+		_name = other._name;
+		_author = other._author;
+		_categoryNumber = other._categoryNumber; 
+	}
 	
 	public String toString() {
 		return ("Book name: "+_name+"\nAuthor name: "+_author+"\nBook category number: "+_categoryNumber);
 	}
-    }
+	
+	public boolean checkCategory(Book other) {
+		if(other._categoryNumber == _categoryNumber)
+			return true;
+		else
+			return false;
+	}
+	
+	public String getName() {
+		return _name;
+	}
+	public String getAuthor() {
+		return _author;
+	}
+	public int getCategoryNumber() {
+		return _categoryNumber;
+	}
+	public void setName(String name) {
+		_name = name;
+	}
+	public void setAuthor(String author) {
+		_author = author;
+	}
+	public void setCategoryNumber(int categoryNumber) {
+		_categoryNumber = categoryNumber;
+	}
+}
 
     public class Tester {
   	public static void main(String[] args) {
   		Book b1 = new Book("Daniel","Story",2);
   		System.out.println(b1);
+  		Book b2 = new Book(b1);
+  		boolean ans = b2.checkCategory(b1);
+  		System.out.println(ans);
   	}	
-    } 
+} 
 
