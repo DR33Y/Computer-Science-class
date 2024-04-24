@@ -48,28 +48,17 @@ public class Tester {
 		}
 	}
 	
-	public static void f5(int num) {
+	public static boolean f5(int num) {
 		Random r = new Random();
 		
+		int[] arr = new int[10];
 		int i;
-		int[] numbers = new int[10];
-		boolean ans=true;
-		
-		for(i=0; i<numbers.length; i++) {
-			numbers[i] = r.nextInt(0,101);
-			System.out.print(numbers[i]+" ");
+		for(i=0; i<arr.length; i++) {
+			arr[i] = r.nextInt(0,99)+1;
+			if(arr[i] == num)
+				return true;
 		}
-		System.out.println();
-
-		for(i=0; i<numbers.length; i++) {
-			if(num == numbers[i]) {
-				ans=true;
-				break;
-			}
-			else
-				ans=false;
-		}
-		System.out.println(ans);
+		return false;
 	}
 	
 	public static void f6() {
