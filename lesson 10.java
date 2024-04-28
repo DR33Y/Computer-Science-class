@@ -105,11 +105,10 @@ public class Tester {
 		int i;
 		int sum=0;
 		
-		for(i=0; i<arr.length; i++) {
+		for(i=0; i<arr.length-1; i++) {
 			if(arr[i] < 0)
 				arr[i] *= -1;
 			sum += arr[i];
-			
 			if(sum == arr[i+1])
 				return arr[i+1];
 		}
@@ -121,65 +120,76 @@ public class Tester {
 		int sum=0;
 		
 		for(i=0; i<arr.length; i++) {
-			int len = arr[i].length();
-			for(j=0; j<len; j++) {
-				if(letter == arr[i].charAt(j))
+			for(j=0; j<arr[i].length(); j++) {
+				if(arr[i].charAt(j) == letter)
 					sum++;
 			}
 		}
 		return sum;
 	}
 	
-	public static void f10(int[] arr, int num) {
+	public static int f10(int[] arr, int num) {
 		int i;
+		int sum=0;
+		
 		for(i=0; i<arr.length; i++) {
 			if(arr[i] > num)
-				System.out.print(i+" ");
+				sum++;
 		}
+		return sum;
 	}
-	
 	
 	public static int f11(int[] arr) {
-		int i, pre_max=2147483646;
-		int max=0, dif, second_i=0;
+		int i;
+		int first=0,diff=100;
+		
 		for(i=0; i<arr.length; i++) {
-			if(arr[i] > max)
-				max = arr[i];
+			if(arr[i] > first)
+				first = arr[i];
 		}
+		
+		int second=0;
 		for(i=0; i<arr.length; i++) {
-			dif = max - arr[i];
-			
-			if(arr[i] == max)
-				continue;
-				if(dif < pre_max) {
-					pre_max = dif;
-					second_i = i;
+			if(arr[i] != first) {
+				if(first-arr[i] < diff) {
+					diff = first-arr[i];
+					second = arr[i];
 				}
-		}
-		return second_i;
-	}
-	
-	public static void f12(int arr[], int num) {
-		int i, j;
-		
-		System.out.println("before change:");
-		for(i=0; i<arr.length; i++) 
-			System.out.print(arr[i]+", ");
-		System.out.println();
-		
-		for(i=0; i<arr.length; i++) {
-			if(arr[i] == num) {
-				for(j=i; j<arr.length-1; j++)
-					arr[j] = arr[j+1];
 			}
 		}
-		
-		System.out.println("after change:");
-		for(i=0; i<arr.length; i++) 
-			System.out.print(arr[i]+", ");
+		return second;
 	}
-
 	
-	public static void main(String[] args) {
+	
+	public static void f12(int[] arr) {
+		Random r = new Random();
+		
+		int i,j=0;
+		int num = r.nextInt(0,101);
+		System.out.println("Number: "+num);
+		boolean change = true;
+		
+		System.out.println("Array before change:");
+		for(i=0; i<arr.length; i++) 
+			System.out.print(arr[i]+" ");
+		System.out.println();
+		
+		System.out.println("Array after change:");
+		for(i=0; i<arr.length; i++) {
+			if(arr[i] == num && j==0) {
+				change = true;
+				for(j=0; j<arr.length; j++) {
+					if(arr[j] != num)
+						System.out.print(arr[j]+" ");
+				}
+				break;
+			}
+			else 
+				change = false;
+		}
+		if(change == false) {
+			for(i=0; i<arr.length; i++)
+				System.out.print(arr[i]+" ");
+		}
+		
 	}
-}
